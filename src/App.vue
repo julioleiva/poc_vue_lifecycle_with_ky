@@ -20,18 +20,17 @@ export default {
   name: "App",
   beforeCreate() {
     // Se inician los eventos y el ciclo de vida
-    // Aún no hay acceso a la data
     console.log("beforeCreate, sin acceso a la data. Data:", this.posts);
   },
   created() {
     // Se inician las injections y la reactividad
-    // Ya hay acceso a la data
     console.log("created, con acceso a la data. Data:", this.posts);
-    console.log(this.posts);
     fetchData();
   },
   beforeMount() {},
-  mounted() {},
+  mounted() {
+    console.log(this.$data);
+  },
   beforeUpdate() {},
   update() {},
   beforeDestroy() {},
